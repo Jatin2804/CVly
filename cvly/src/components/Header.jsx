@@ -13,9 +13,12 @@ const Header = () => {
   console.log(darkMode)
   return (
     <Box sx={{display:"flex",alignItems :"center",justifyContent:"space-between"}}>
+      <Box>
       <Typography variant="h1" style={{ color: "#1B9BB1" }}>
         CV<span style={{ color: "#EB5777" }}>ly</span>
       </Typography>
+      </Box>
+      
       <Box sx={{display:"flex",alignItems :"center"}}>
         <Typography variant="body1" sx={{ color: "#1B9BB1" }}>
           Dark:

@@ -1,10 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography}from "@mui/material";
 import { Radio, FormControlLabel, RadioGroup } from "@mui/material";
 import React, { useState } from "react";
 import { useDetails } from "../context/DetailsContext";
 import { useFormatter } from "../context/FormatterContext";
 import Button from "@mui/material/Button";
-
+import "./Preview.css"
 const Preview = () => {
   const [alignment, setAlignment] = useState("center");
   const { formatterString, updateFormatter} = useFormatter();
@@ -29,13 +29,13 @@ const Preview = () => {
   };
   return (
     <Box>
-      <Typography variant="h6" color="secondary.light">
+      <Typography sx={{color:"black"}}variant="h6" color="secondary.light">
         Preview Resume
       </Typography>
       <br />
      
 
-      <Typography>First Format</Typography>
+     <Typography sx={{color:"black"}}>First Format</Typography>
 
       <Box
         sx={{
@@ -53,7 +53,7 @@ const Preview = () => {
         {/* Details */}
         <Box
           className="Details"
-          sx={{ width: "90%", textAlign: { alignment } }}
+          sx={{ width: "90%", textAlign: { alignment } ,color:"black"}}
         >
           {personalInfo.name.trim() ||
           personalInfo.email.trim() ||
@@ -61,18 +61,18 @@ const Preview = () => {
           personalInfo.linkedin.trim() ||
           personalInfo.github.trim() ? (
             <>
-              <Typography variant="h6">{personalInfo.name}</Typography>
+              <Typography sx={{color:"black"}}sx={{color:"black"}} variant="h6">{personalInfo.name}</Typography>
               <Box sx={{ display: "flex" }}>
-                <Typography>{personalInfo.email} | </Typography>
-                <Typography>Phone: {personalInfo.phone}</Typography>
+               <Typography sx={{color:"black"}}>{personalInfo.email} | </Typography>
+               <Typography sx={{color:"black"}}>Phone: {personalInfo.phone}</Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography>LinkedIn: {personalInfo.linkedin} | </Typography>
-                <Typography>GitHub: {personalInfo.github}</Typography>
+               <Typography sx={{color:"black"}}>LinkedIn: {personalInfo.linkedin} | </Typography>
+               <Typography sx={{color:"black"}}>GitHub: {personalInfo.github}</Typography>
               </Box>
             </>
           ) : (
-            <Typography>No personal details available. Please add.</Typography>
+            <Typography sx={{color:"black"}} >No personal details available. Please add.</Typography>
           )}
         </Box>
 
@@ -80,14 +80,14 @@ const Preview = () => {
 
         {/* Skills */}
         <Box className="Skills" sx={{ width: "90%" }}>
-          <Typography variant="h6">Skills</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Skills</Typography>
           <Box sx={{ display: "flex" }}>
             {skills.length > 0 ? (
               skills.map((skill, index) => (
-                <Typography key={index}>{skill}, </Typography>
+                <Typography sx={{color:"black"}}key={index}>{skill}, </Typography>
               ))
             ) : (
-              <Typography>No skills added. Please add.</Typography>
+              <Typography sx={{color:"black"}}>No skills added. Please add.</Typography>
             )}
           </Box>
         </Box>
@@ -96,7 +96,7 @@ const Preview = () => {
 
             {/* Projects */}
             <Box className="Projects" sx={{ width: "90%" }}>
-          <Typography variant="h6">Projects</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Projects</Typography>
           {projects.some(
             (project) =>
               project.title.trim() &&
@@ -112,13 +112,13 @@ const Preview = () => {
               )
               .map((project, index) => (
                 <Box key={index}>
-                  <Typography>Title: {project.title}</Typography>
-                  <Typography>Description: {project.description}</Typography>
-                  <Typography>Technologies: {project.technologies}</Typography>
+                 <Typography sx={{color:"black"}}>Title: {project.title}</Typography>
+                 <Typography sx={{color:"black"}}>Description: {project.description}</Typography>
+                 <Typography sx={{color:"black"}}>Technologies: {project.technologies}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No project details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No project details available. Please add.</Typography>
           )}
           
         </Box>
@@ -126,7 +126,7 @@ const Preview = () => {
 
   {/* Work Experience */}
   <Box className="Experience" sx={{ width: "90%" }}>
-          <Typography variant="h6">Work Experience</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Work Experience</Typography>
           {workExperience.some(
             (exp) =>
               exp.company.trim() &&
@@ -144,14 +144,14 @@ const Preview = () => {
               )
               .map((exp, index) => (
                 <Box key={index}>
-                  <Typography>Company: {exp.company}</Typography>
-                  <Typography>Role: {exp.role}</Typography>
-                  <Typography>Duration: {exp.duration}</Typography>
-                  <Typography>Achievements: {exp.achievements}</Typography>
+                 <Typography sx={{color:"black"}}>Company: {exp.company}</Typography>
+                 <Typography sx={{color:"black"}}>Role: {exp.role}</Typography>
+                 <Typography sx={{color:"black"}}>Duration: {exp.duration}</Typography>
+                 <Typography sx={{color:"black"}}>Achievements: {exp.achievements}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>
+           <Typography sx={{color:"black"}}>
               No work experience details available. Please add.
             </Typography>
           )}
@@ -160,7 +160,7 @@ const Preview = () => {
         <br />
         {/* Education */}
         <Box className="Education" sx={{ width: "90%" }}>
-          <Typography variant="h6">Education</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Education</Typography>
           {education.some(
             (edu) =>
               edu.institution.trim() &&
@@ -176,13 +176,13 @@ const Preview = () => {
               )
               .map((edu, index) => (
                 <Box key={index}>
-                  <Typography>Institution: {edu.institution}</Typography>
-                  <Typography>Degree: {edu.degree}</Typography>
-                  <Typography>Year of Passing: {edu.yearOfPassing}</Typography>
+                 <Typography sx={{color:"black"}}>Institution: {edu.institution}</Typography>
+                 <Typography sx={{color:"black"}}>Degree: {edu.degree}</Typography>
+                 <Typography sx={{color:"black"}}>Year of Passing: {edu.yearOfPassing}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No education details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No education details available. Please add.</Typography>
           )}
         </Box>
 
@@ -196,7 +196,7 @@ const Preview = () => {
       <br />
       <br/>
 
-      <Typography>Second Format</Typography>
+     <Typography sx={{color:"black"}}>Second Format</Typography>
 
       <Box
         sx={{
@@ -222,18 +222,18 @@ const Preview = () => {
           personalInfo.linkedin.trim() ||
           personalInfo.github.trim() ? (
             <>
-              <Typography variant="h6">{personalInfo.name}</Typography>
+              <Typography sx={{color:"black"}}variant="h6">{personalInfo.name}</Typography>
               <Box sx={{ display: "flex" }}>
-                <Typography>{personalInfo.email} | </Typography>
-                <Typography>Phone: {personalInfo.phone}</Typography>
+               <Typography sx={{color:"black"}}>{personalInfo.email} | </Typography>
+               <Typography sx={{color:"black"}}>Phone: {personalInfo.phone}</Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography>LinkedIn: {personalInfo.linkedin} | </Typography>
-                <Typography>GitHub: {personalInfo.github}</Typography>
+               <Typography sx={{color:"black"}}>LinkedIn: {personalInfo.linkedin} | </Typography>
+               <Typography sx={{color:"black"}}>GitHub: {personalInfo.github}</Typography>
               </Box>
             </>
           ) : (
-            <Typography>No personal details available. Please add.</Typography>
+            <Typography sx={{color:"black"}}>No personal details available. Please add.</Typography>
           )}
         </Box>
 
@@ -241,14 +241,14 @@ const Preview = () => {
 
         {/* Skills */}
         <Box className="Skills" sx={{ width: "90%" }}>
-          <Typography variant="h6">Skills</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Skills</Typography>
           <Box sx={{ display: "flex" }}>
             {skills.length > 0 ? (
               skills.map((skill, index) => (
-                <Typography key={index}>{skill}, </Typography>
+                <Typography sx={{color:"black"}}key={index}>{skill}, </Typography>
               ))
             ) : (
-              <Typography>No skills added. Please add.</Typography>
+              <Typography sx={{color:"black"}}>No skills added. Please add.</Typography>
             )}
           </Box>
         </Box>
@@ -257,7 +257,7 @@ const Preview = () => {
 
           {/* Work Experience */}
           <Box className="Experience" sx={{ width: "90%" }}>
-          <Typography variant="h6">Work Experience</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Work Experience</Typography>
           {workExperience.some(
             (exp) =>
               exp.company.trim() &&
@@ -275,14 +275,14 @@ const Preview = () => {
               )
               .map((exp, index) => (
                 <Box key={index}>
-                  <Typography>Company: {exp.company}</Typography>
-                  <Typography>Role: {exp.role}</Typography>
-                  <Typography>Duration: {exp.duration}</Typography>
-                  <Typography>Achievements: {exp.achievements}</Typography>
+                 <Typography sx={{color:"black"}}>Company: {exp.company}</Typography>
+                 <Typography sx={{color:"black"}}>Role: {exp.role}</Typography>
+                 <Typography sx={{color:"black"}}>Duration: {exp.duration}</Typography>
+                 <Typography sx={{color:"black"}}>Achievements: {exp.achievements}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>
+            <Typography sx={{color:"black"}}>
               No work experience details available. Please add.
             </Typography>
           )}
@@ -292,7 +292,7 @@ const Preview = () => {
 
         {/* Projects */}
         <Box className="Projects" sx={{ width: "90%" }}>
-          <Typography variant="h6">Projects</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Projects</Typography>
           {projects.some(
             (project) =>
               project.title.trim() &&
@@ -308,20 +308,20 @@ const Preview = () => {
               )
               .map((project, index) => (
                 <Box key={index}>
-                  <Typography>Title: {project.title}</Typography>
-                  <Typography>Description: {project.description}</Typography>
-                  <Typography>Technologies: {project.technologies}</Typography>
+                 <Typography sx={{color:"black"}}>Title: {project.title}</Typography>
+                 <Typography sx={{color:"black"}}>Description: {project.description}</Typography>
+                 <Typography sx={{color:"black"}}>Technologies: {project.technologies}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No project details available. Please add.</Typography>
+            <Typography sx={{color:"black"}}>No project details available. Please add.</Typography>
           )}
           <br />
         </Box>
 
         {/* Education */}
         <Box className="Education" sx={{ width: "90%" }}>
-          <Typography variant="h6">Education</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Education</Typography>
           {education.some(
             (edu) =>
               edu.institution.trim() &&
@@ -337,13 +337,13 @@ const Preview = () => {
               )
               .map((edu, index) => (
                 <Box key={index}>
-                  <Typography>Institution: {edu.institution}</Typography>
-                  <Typography>Degree: {edu.degree}</Typography>
-                  <Typography>Year of Passing: {edu.yearOfPassing}</Typography>
+                 <Typography sx={{color:"black"}}>Institution: {edu.institution}</Typography>
+                 <Typography sx={{color:"black"}}>Degree: {edu.degree}</Typography>
+                 <Typography sx={{color:"black"}}>Year of Passing: {edu.yearOfPassing}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No education details available. Please add.</Typography>
+            <Typography sx={{color:"black"}}>No education details available. Please add.</Typography>
           )}
         </Box>
 
@@ -358,7 +358,7 @@ const Preview = () => {
       <br />
       <br/>
 
-      <Typography>Third Format</Typography>
+     <Typography sx={{color:"black"}}>Third Format</Typography>
 
       <Box
         sx={{
@@ -384,18 +384,18 @@ const Preview = () => {
           personalInfo.linkedin.trim() ||
           personalInfo.github.trim() ? (
             <>
-              <Typography variant="h6">{personalInfo.name}</Typography>
+              <Typography sx={{color:"black"}}variant="h6">{personalInfo.name}</Typography>
               <Box sx={{ display: "flex" }}>
-                <Typography>{personalInfo.email} | </Typography>
-                <Typography>Phone: {personalInfo.phone}</Typography>
+               <Typography sx={{color:"black"}}>{personalInfo.email} | </Typography>
+               <Typography sx={{color:"black"}}>Phone: {personalInfo.phone}</Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography>LinkedIn: {personalInfo.linkedin} | </Typography>
-                <Typography>GitHub: {personalInfo.github}</Typography>
+               <Typography sx={{color:"black"}}>LinkedIn: {personalInfo.linkedin} | </Typography>
+               <Typography sx={{color:"black"}}>GitHub: {personalInfo.github}</Typography>
               </Box>
             </>
           ) : (
-            <Typography>No personal details available. Please add.</Typography>
+            <Typography Typography sx={{color:"black"}}>No personal details available. Please add.</Typography>
           )}
         </Box>
 
@@ -403,14 +403,14 @@ const Preview = () => {
 
         {/* Skills */}
         <Box className="Skills" sx={{ width: "90%" }}>
-          <Typography variant="h6">Skills</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Skills</Typography>
           <Box sx={{ display: "flex" }}>
             {skills.length > 0 ? (
               skills.map((skill, index) => (
-                <Typography key={index}>{skill}, </Typography>
+                <Typography sx={{color:"black"}}key={index}>{skill}, </Typography>
               ))
             ) : (
-              <Typography>No skills added. Please add.</Typography>
+             <Typography sx={{color:"black"}}>No skills added. Please add.</Typography>
             )}
           </Box>
         </Box>
@@ -419,7 +419,7 @@ const Preview = () => {
 
         {/* Education */}
         <Box className="Education" sx={{ width: "90%" }}>
-          <Typography variant="h6">Education</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Education</Typography>
           {education.some(
             (edu) =>
               edu.institution.trim() &&
@@ -435,13 +435,13 @@ const Preview = () => {
               )
               .map((edu, index) => (
                 <Box key={index}>
-                  <Typography>Institution: {edu.institution}</Typography>
-                  <Typography>Degree: {edu.degree}</Typography>
-                  <Typography>Year of Passing: {edu.yearOfPassing}</Typography>
+                 <Typography sx={{color:"black"}}>Institution: {edu.institution}</Typography>
+                 <Typography sx={{color:"black"}}>Degree: {edu.degree}</Typography>
+                 <Typography sx={{color:"black"}}>Year of Passing: {edu.yearOfPassing}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No education details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No education details available. Please add.</Typography>
           )}
         </Box>
 
@@ -449,7 +449,7 @@ const Preview = () => {
 
         {/* Work Experience */}
         <Box className="Experience" sx={{ width: "90%" }}>
-          <Typography variant="h6">Work Experience</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Work Experience</Typography>
           {workExperience.some(
             (exp) =>
               exp.company.trim() &&
@@ -467,14 +467,14 @@ const Preview = () => {
               )
               .map((exp, index) => (
                 <Box key={index}>
-                  <Typography>Company: {exp.company}</Typography>
-                  <Typography>Role: {exp.role}</Typography>
-                  <Typography>Duration: {exp.duration}</Typography>
-                  <Typography>Achievements: {exp.achievements}</Typography>
+                 <Typography sx={{color:"black"}}>Company: {exp.company}</Typography>
+                 <Typography sx={{color:"black"}}>Role: {exp.role}</Typography>
+                 <Typography sx={{color:"black"}}>Duration: {exp.duration}</Typography>
+                 <Typography sx={{color:"black"}}>Achievements: {exp.achievements}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>
+           <Typography sx={{color:"black"}}>
               No work experience details available. Please add.
             </Typography>
           )}
@@ -484,7 +484,7 @@ const Preview = () => {
 
         {/* Projects */}
         <Box className="Projects" sx={{ width: "90%" }}>
-          <Typography variant="h6">Projects</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Projects</Typography>
           {projects.some(
             (project) =>
               project.title.trim() &&
@@ -500,13 +500,13 @@ const Preview = () => {
               )
               .map((project, index) => (
                 <Box key={index}>
-                  <Typography>Title: {project.title}</Typography>
-                  <Typography>Description: {project.description}</Typography>
-                  <Typography>Technologies: {project.technologies}</Typography>
+                 <Typography sx={{color:"black"}}>Title: {project.title}</Typography>
+                 <Typography sx={{color:"black"}}>Description: {project.description}</Typography>
+                 <Typography sx={{color:"black"}}>Technologies: {project.technologies}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No project details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No project details available. Please add.</Typography>
           )}
           <br />
         </Box>
@@ -516,7 +516,7 @@ const Preview = () => {
       <br />
       <br/>
 
-      <Typography>Forth Format</Typography>
+     <Typography sx={{color:"black"}}>Forth Format</Typography>
 
       <Box
         sx={{
@@ -542,18 +542,18 @@ const Preview = () => {
           personalInfo.linkedin.trim() ||
           personalInfo.github.trim() ? (
             <>
-              <Typography variant="h6">{personalInfo.name}</Typography>
+              <Typography sx={{color:"black"}}variant="h6">{personalInfo.name}</Typography>
               <Box sx={{ display: "flex" }}>
-                <Typography>{personalInfo.email} | </Typography>
-                <Typography>Phone: {personalInfo.phone}</Typography>
+               <Typography sx={{color:"black"}}>{personalInfo.email} | </Typography>
+               <Typography sx={{color:"black"}}>Phone: {personalInfo.phone}</Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography>LinkedIn: {personalInfo.linkedin} | </Typography>
-                <Typography>GitHub: {personalInfo.github}</Typography>
+               <Typography sx={{color:"black"}}>LinkedIn: {personalInfo.linkedin} | </Typography>
+               <Typography sx={{color:"black"}}>GitHub: {personalInfo.github}</Typography>
               </Box>
             </>
           ) : (
-            <Typography>No personal details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No personal details available. Please add.</Typography>
           )}
         </Box>
 
@@ -561,14 +561,14 @@ const Preview = () => {
 
         {/* Skills */}
         <Box className="Skills" sx={{ width: "90%" }}>
-          <Typography variant="h6">Skills</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Skills</Typography>
           <Box sx={{ display: "flex" }}>
             {skills.length > 0 ? (
               skills.map((skill, index) => (
-                <Typography key={index}>{skill}, </Typography>
+                <Typography sx={{color:"black"}}key={index}>{skill}, </Typography>
               ))
             ) : (
-              <Typography>No skills added. Please add.</Typography>
+             <Typography sx={{color:"black"}}>No skills added. Please add.</Typography>
             )}
           </Box>
         </Box>
@@ -577,7 +577,7 @@ const Preview = () => {
 
         {/* Education */}
         <Box className="Education" sx={{ width: "90%" }}>
-          <Typography variant="h6">Education</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Education</Typography>
           {education.some(
             (edu) =>
               edu.institution.trim() &&
@@ -593,13 +593,13 @@ const Preview = () => {
               )
               .map((edu, index) => (
                 <Box key={index}>
-                  <Typography>Institution: {edu.institution}</Typography>
-                  <Typography>Degree: {edu.degree}</Typography>
-                  <Typography>Year of Passing: {edu.yearOfPassing}</Typography>
+                 <Typography sx={{color:"black"}}>Institution: {edu.institution}</Typography>
+                 <Typography sx={{color:"black"}}>Degree: {edu.degree}</Typography>
+                 <Typography sx={{color:"black"}}>Year of Passing: {edu.yearOfPassing}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No education details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No education details available. Please add.</Typography>
           )}
         </Box>
 
@@ -607,7 +607,7 @@ const Preview = () => {
 
   {/* Projects */}
   <Box className="Projects" sx={{ width: "90%" }}>
-          <Typography variant="h6">Projects</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Projects</Typography>
           {projects.some(
             (project) =>
               project.title.trim() &&
@@ -623,19 +623,19 @@ const Preview = () => {
               )
               .map((project, index) => (
                 <Box key={index}>
-                  <Typography>Title: {project.title}</Typography>
-                  <Typography>Description: {project.description}</Typography>
-                  <Typography>Technologies: {project.technologies}</Typography>
+                 <Typography sx={{color:"black"}}>Title: {project.title}</Typography>
+                 <Typography sx={{color:"black"}}>Description: {project.description}</Typography>
+                 <Typography sx={{color:"black"}}>Technologies: {project.technologies}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>No project details available. Please add.</Typography>
+           <Typography sx={{color:"black"}}>No project details available. Please add.</Typography>
           )}
           <br />
         </Box>
         {/* Work Experience */}
         <Box className="Experience" sx={{ width: "90%" }}>
-          <Typography variant="h6">Work Experience</Typography>
+          <Typography sx={{color:"black"}}variant="h6">Work Experience</Typography>
           {workExperience.some(
             (exp) =>
               exp.company.trim() &&
@@ -653,14 +653,14 @@ const Preview = () => {
               )
               .map((exp, index) => (
                 <Box key={index}>
-                  <Typography>Company: {exp.company}</Typography>
-                  <Typography>Role: {exp.role}</Typography>
-                  <Typography>Duration: {exp.duration}</Typography>
-                  <Typography>Achievements: {exp.achievements}</Typography>
+                 <Typography sx={{color:"black"}}>Company: {exp.company}</Typography>
+                 <Typography sx={{color:"black"}}>Role: {exp.role}</Typography>
+                 <Typography sx={{color:"black"}}>Duration: {exp.duration}</Typography>
+                 <Typography sx={{color:"black"}}>Achievements: {exp.achievements}</Typography>
                 </Box>
               ))
           ) : (
-            <Typography>
+           <Typography sx={{color:"black"}}>
               No work experience details available. Please add.
             </Typography>
           )}

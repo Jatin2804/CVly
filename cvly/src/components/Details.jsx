@@ -273,7 +273,7 @@ import {
             </AccordionDetails>
           </Accordion>
         </Box>
-        <Button
+        <Button variant="contained" sx={{margin:"10px"}}
   onClick={() => {
     console.log("Personal Info:", personalInfo);
     console.log("Education:", education);
